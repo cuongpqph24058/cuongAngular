@@ -1,0 +1,124 @@
+<app-header/>
+
+        <!-- Header-->
+        <div
+        id="carouselExampleSlidesOnly"
+        class="relative"
+        data-te-carousel-init
+        data-te-carousel-slide>
+        <!--Carousel items-->
+        <app-search></app-search>
+        <app-tags></app-tags>
+        <div
+          class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+          <!--First item-->
+          <div
+            class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-item
+            data-te-carousel-active>
+            <img
+              src="../../../assets/img/360_F_294312040_Yw5wclSBbMXSQF42LQg74QUU9XhjfIM3.jpg"
+              class="block w-full"
+              alt="Wild Landscape" />
+          </div>
+          <!--Second item-->
+          <div
+            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-item>
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+              class="block w-full"
+              alt="Camera" />
+          </div>
+          <!--Third item-->
+          <div
+            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-item>
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+              class="block w-full"
+              alt="Exotic Fruits" />
+          </div>
+        </div>
+      </div>
+
+        <!-- Section-->
+        <div class="">
+
+        </div>
+
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 mt-5">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
+
+                        <div  *ngFor ="let food of foods " class="col mb-5">
+                            <a routerLink="/food/{{food.id}}">
+                            <div class="card h-100">
+                                <!-- Product image-->
+                                <img class="card-img-top" [src]="food.imageUrl" [alt]="food.name" />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">{{food.name}}</h5>
+                                        <!-- Product reviews-->
+                                        <div class="product-item-footer">
+
+
+                                            <div class="cook-time">
+                                              <span>🕒</span>
+                                              {{food.cookTime}}
+                                            </div>
+                                          </div>
+
+                                        <!-- Product price-->
+                                        <span class="text-muted text-decoration-line-through"> {{food.price | currency}}</span>
+                                        {{food.realPrice | currency}}
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+
+                            </div>
+                        </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+        <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
+          <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+              <div class="grid items-center grid-cols-2 gap-10 sm:gap-y-16 sm:grid-cols-3 xl:grid-cols-6">
+                  <div>
+                      <img class="object-contain w-auto mx-auto h-14" src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/1/logo-1.png" alt="" />
+                  </div>
+
+                  <div>
+                      <img class="object-contain w-auto mx-auto h-14" src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/1/logo-2.png" alt="" />
+                  </div>
+
+                  <div>
+                      <img class="object-contain w-auto mx-auto h-14" src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/1/logo-3.png" alt="" />
+                  </div>
+
+                  <div>
+                      <img class="object-contain w-auto mx-auto h-14" src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/1/logo-4.png" alt="" />
+                  </div>
+
+                  <div>
+                      <img class="object-contain w-auto mx-auto h-14" src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/1/logo-5.png" alt="" />
+                  </div>
+
+                  <div>
+                      <img class="object-contain w-auto mx-auto h-14" src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/1/logo-6.png" alt="" />
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <app-footer/>
